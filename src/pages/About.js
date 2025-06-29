@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import aboutImg from '../assets/aboutus.jpg'; // Assuming you have an image for the about us section
 import '../styles/aboutus.css';
+import { Link } from 'react-router-dom';
 
 function About() {
     return (

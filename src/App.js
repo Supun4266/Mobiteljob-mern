@@ -7,6 +7,7 @@ import './App.css';
 import Login from './pages/Login';
 import About from './pages/About';
 import Home from './pages/Home';
+import Vacancy from './pages/Vacancy';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/home" element={<Home />} />
+                        <Route path="/vacancy" element={<Vacancy />} />
                         {/* Add more routes as needed */}
 
                     

@@ -3,17 +3,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    background-color: #f0f6fa;
-    color: #333;
-    background-image: linear-gradient(to bottom right, rgba(220, 235, 245, 0.6), rgba(240, 246, 250, 0.6)), url('marble-bg.png');
-    background-size: cover;
-    background-attachment: fixed;
-    min-height: 100vh;
+/* General body styles */
+body, html, #root {
+  height: 100%;
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* center vertically */
 }
+
 
 /* Header styles */
 header {
@@ -82,38 +82,38 @@ main {
 }
 
 .application-container {
-    max-width: 900px;
+    max-width: 1054px;
     margin: 20px auto;
     background-color: white;
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     padding: 30px;
+    display: block;
 }
 
-.application-form {
-    width: 100%;
-}
-
-.form-row {
+.application-form .form-row {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    width: 100%;
 }
 
-label {
+.application-form label {
     width: 170px;
     font-size: 16px;
     color: #333;
     font-weight: 500;
+    text-align: right;
+    margin-right: 15px;
 }
 
-.colon {
+.application-form .colon {
     margin: 0 15px;
     color: #333;
     font-weight: 500;
 }
 
-.input-field {
+.application-form .input-field {
     flex: 1;
     padding: 10px 15px;
     border: 1px solid #ddd;
@@ -121,25 +121,27 @@ label {
     font-size: 16px;
     outline: none;
     transition: border-color 0.3s;
+    box-sizing: border-box;
 }
 
-.input-field:focus {
+.application-form .input-field:focus {
     border-color: #0056a6;
 }
 
-.job-title {
+.application-form .job-title {
     border: none;
     background: transparent;
     padding-left: 0;
     font-weight: 500;
+    flex: 1;
 }
 
-.select-wrapper {
+.application-form .select-wrapper {
     position: relative;
     flex: 1;
 }
 
-.select-wrapper::after {
+.application-form .select-wrapper::after {
     content: '▼';
     font-size: 10px;
     position: absolute;
@@ -150,32 +152,34 @@ label {
     color: #888;
 }
 
-select.input-field {
+.application-form select.input-field {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-color: white;
     cursor: pointer;
+    width: 100%;
 }
 
-.date-input-wrapper {
+.application-form .date-input-wrapper {
     position: relative;
     flex: 1;
 }
 
-.calendar-icon {
+.application-form .calendar-icon {
     position: absolute;
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
     color: #888;
+    pointer-events: none;
 }
 
-.upload-section {
+.application-form .upload-section {
     margin-top: 25px;
 }
 
-.dropzone {
+.application-form .dropzone {
     border: 2px dashed #ccc;
     border-radius: 10px;
     padding: 30px;
@@ -183,37 +187,38 @@ select.input-field {
     margin-bottom: 25px;
     cursor: pointer;
     transition: border-color 0.3s;
+    width: 100%;
 }
 
-.dropzone:hover {
+.application-form .dropzone:hover {
     border-color: #0056a6;
 }
 
-.dropzone-content {
+.application-form .dropzone-content {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.upload-icon {
+.application-form .upload-icon {
     font-size: 40px;
     color: #aaa;
     margin-bottom: 10px;
 }
 
-.dropzone-text {
+.application-form .dropzone-text {
     color: #777;
     font-size: 18px;
     margin-bottom: 5px;
 }
 
-.or-text {
+.application-form .or-text {
     color: #999;
     font-size: 14px;
     margin: 5px 0;
 }
 
-.browse-btn {
+.application-form .browse-btn {
     background-color: #e6f2ff;
     color: #0088ff;
     border: none;
@@ -224,17 +229,17 @@ select.input-field {
     transition: background-color 0.3s;
 }
 
-.browse-btn:hover {
+.application-form .browse-btn:hover {
     background-color: #d1e6ff;
 }
 
-.submit-row {
+.application-form .submit-row {
     display: flex;
     justify-content: center;
     margin-top: 30px;
 }
 
-.submit-btn {
+.application-form .submit-btn {
     background-color: #0056a6;
     color: white;
     border: none;
@@ -246,7 +251,7 @@ select.input-field {
     font-weight: 500;
 }
 
-.submit-btn:hover {
+.application-form .submit-btn:hover {
     background-color: #004080;
 }
 
@@ -262,25 +267,28 @@ select.input-field {
         justify-content: center;
     }
     
-    .form-row {
+    .application-form .form-row {
         flex-direction: column;
         align-items: flex-start;
     }
     
-    label {
+    .application-form label {
         width: 100%;
         margin-bottom: 5px;
+        text-align: left;
     }
     
-    .colon {
+    .application-form .colon {
         display: none;
     }
     
-    .input-field {
+    .application-form .input-field,
+    .application-form select.input-field {
         width: 100%;
     }
     
     .application-container {
         padding: 20px 15px;
+        margin: 10px;
     }
 }
